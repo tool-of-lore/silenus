@@ -1,0 +1,33 @@
+{%- assign footer_nav = emptyArray -%}
+{%- assign links = emptyArray -%}
+{%- assign link_name = link_name | push: "GitHub" -%}
+{%- assign link_name = link_name | push: site.github.repository_url -%}
+{%- assign footer_nav = footer_nav | push: link_name -%}
+{{ footer_nav | inspect }}
+{% for nav in footer_nav %}
+- {{ nav | inspect }}{%- endfor -%}
+<!-- <footer>
+	<nav class="navbar navbar-expand-md">
+		<div class="container{{ fluid }}">
+			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarFooter" aria-controls="navbarFooter" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+
+			<div class="collapse navbar-collapse" id="navbarFooter">
+				<ul class="navbar-nav mr-auto">
+					<li class="nav-item">
+						<a class="nav-link" href="{{ site.github.repository_url }}">GitHub</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="Page info">Page info</a>
+					</li>
+				</ul>
+				<ul class="navbar-nav my-lg-0">
+					<li class="nav-item">
+						<a class="nav-link" href="#top">Top</a>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</nav>
+</footer> -->

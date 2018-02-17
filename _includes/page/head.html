@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<title>{{ site.title }}{% if page.title %} | {{ page.title }}{% endif %}</title>
+
+	<meta data-build_revision="{{ site.github.build_revision }}">
+	<!-- Required meta tags -->
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+	<!-- CSS -->
+	
+	<!-- CDN -->
+	{% include page/cdn_css.html %}
+
+	<!-- GOOGLE Webfonts -->
+	{% if page.google_webfont %}<link href="https://fonts.googleapis.com/css?family={{ page.google_webfont }}" rel="stylesheet">{% endif %}
+	
+	<!-- FONT-FACE Fonts -->
+	{% if page.font_face %}<link rel="stylesheet" href="{{ '/assets/fonts/' | append: page.font_face | absolute_url }}">{% endif %}
+	
+	<!-- THEME Font -->
+	<link rel="stylesheet" href="{{ '/assets/style.css' | absolute_url }}">
+
+	<!-- Javascripts CDN -->
+	{% include page/cdn_js.html %}
+
+	<!-- script.js is deferred -->
+	<script src="{{ '/assets/script.js' | absolute_url }}" defer></script>
+</head>
+<body>

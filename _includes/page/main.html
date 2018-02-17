@@ -1,0 +1,17 @@
+<main class="{% include filter/fluid.html %}">
+  {% assign rows = content | split: "<!--row-->" %}
+  {%- for row in rows -%}
+  <div class="row">
+    {% assign j = forloop.index0 %}
+    {%- comment -%} Loop columns {%- endcomment -%}
+    {%- assign columns = row | split: "<!--column-->" -%}
+    {%- for column in columns -%}
+    <div class="col">
+      {%- comment -%} Render column {%- endcomment -%}
+      {% assign column_live = rows[j] | split: "<!--column-->" %}
+      {{ column_live[forloop.index0] | strip }}
+    </div>
+    {% endfor %}
+  </div>
+  {%- endfor -%}
+</main>

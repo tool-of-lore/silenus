@@ -1,0 +1,7 @@
+title: Silenus
+description: SILENUS Greek God of Drunkenness & Wine-Making
+
+plugins:
+  - jekyll-default-layout
+  - jekyll-github-metadata
+  - jekyll-coffeescript
